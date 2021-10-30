@@ -11,9 +11,9 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+| Student Name  | Dania Dababo     |
+| Student ID    | 922001571       |
+| Student Email | ddababo@sfsu.edu    |
 
 
 
