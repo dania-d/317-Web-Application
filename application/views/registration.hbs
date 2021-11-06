@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/public/css/registration.css">
+
+    <title>User Registration</title>
+    <script defer src="public/js/formValidation.js"> </script>
+</head>
+<body>    
+    <div class="container">
+
+        <form id = "registrationForm" onsubmit="return errorMessages()"> <!--calls errorMessages function */ -->
+            <h1>Register</h1>
+            <fieldset>
+
+                <div class="grid-item">
+                <label>Username</label>
+                <input id = "username" type="text" placeholder="Enter Username" />
+                </div>
+                <div class="grid-item">
+                <label>E-mail</label>
+                <input name = "email" id = "email" type="email" placeholder="Enter Email" />
+                </div>
+                <div class="grid-item">
+                <label>Password</label>
+                <input id = "password" type="text" placeholder="Enter Password" />
+                </div>
+                <div class="grid-item">
+                <label>Confirm Password</label>
+                <input id = "confirmPassword" type="text" placeholder="Re-Enter Password" />
+                </div>
+                <!--added div element for error messages-->
+                <div id="error"></div>
+
+                <div class="grid-item" id="checkboxes">
+                    <input type="checkbox"  required /> 
+                    <label class="checkbox-labels">I am 13+ years of age</label> </br>
+                    <input type="checkbox" required /> 
+                    <label class="checkbox-labels">I accept the <a href="https://its.sfsu.edu/privacynotice" target="_blank">TOS and Privacy Rules</a></label>
+                </div>
+
+                <div  id="submit-button">
+                <button type="submit">Submit</button>           <!-- type=submit in order for required tags to work-->
+                </div>
+            </fieldset>
+        </form>
+    </div>   
+</body>
+</html>

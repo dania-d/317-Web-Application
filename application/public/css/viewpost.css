@@ -1,0 +1,41 @@
+html{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background-color: #738290;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+h1 {
+    text-align: center;   
+    letter-spacing: .1em;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+section{
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+.post{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    padding: 50px;
+    position: relative;
+    border-radius: .5em;
+    
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5em;
+
+}

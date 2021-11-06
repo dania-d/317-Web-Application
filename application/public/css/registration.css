@@ -1,0 +1,81 @@
+html{
+    margin: 0px;
+    height: 100%;
+    background-color: #738290;
+}
+body{
+    margin:0px;
+    height: 100vh;
+}
+h1{
+    width: 50%;
+    margin: auto;
+    margin-bottom: .5em;
+    margin-top:1em;
+    letter-spacing: .1em;
+    text-align: center;
+}
+
+#registrationForm{  
+    width: 35em;
+    height: 32em;  
+    background-color: #E9E6FF;
+    border-radius: 15px ;  
+    font-family:'Courier New', Courier, monospace;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+fieldset{
+    border: none;
+    width: 30em;
+    height: 25em; 
+    margin: auto;
+}
+label{
+    display: inline-block;
+    letter-spacing: .05em;
+    margin-top: .5em;
+}
+#checkboxes{
+    width: max-content;
+    margin-top: 1em; 
+}
+input[type="text"], input[type="password"], input[type="email"]{ 
+     display: inline;
+     float:right;
+     width: 20em;
+     height: 2em;
+     text-align: center;
+ }
+ input::placeholder, button{
+     font-family: 'Courier New', Courier, monospace;
+ }
+.grid-item{
+    display: block;
+    margin: auto;
+    margin-bottom: .8em;
+    text-align: left;
+    padding: .2em 1em 1em 1em;
+    border-radius: 4px;
+    letter-spacing: .1em;
+}
+#submit-button{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+button{
+    letter-spacing: .1em;
+    height: 1.8em;
+    width: 6em;
+    font-size: 15px;
+}
+button:hover{
+    background-color: rgb(96, 96, 96);
+    color: rgb(218, 225, 220);
+    transition-duration: 0.5s;
+}

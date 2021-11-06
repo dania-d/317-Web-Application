@@ -1,2 +1,93 @@
-<h1>{{title}}</h1>
-<p>Hello {{ name }},Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="sylesheet" type="text/css" href="/application/public/css/index.css"/> 
+
+
+<style>
+html{
+    margin: 0px;
+    height: 100%;
+}
+footer{
+    position: fixed;
+    padding: 10px 10px 0px 10px;       
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+body{
+    background-color: #E9E6FF;
+}
+#container{
+    display: grid;
+}
+#banner-text{
+    display: inline-block;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #595860;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    display: inline;
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+  }
+  #search-text{
+      display: flex;
+      margin: auto;
+      margin-right: 2em;
+      height: 20px;
+      width: 20em;
+      border-radius: .25rem;
+      letter-spacing: .1em;
+  }
+</style> 
+
+
+</head>
+<body>
+    <!--  PUT INSIDE OF BANNER.HBS
+    
+    <div id="container">
+        <span id="banner-text" class="banner-flex-item">Dania's Photo App</span>
+
+    
+    <nav id="nav-bar">
+            <ul>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/postimage">Post</a></li>
+                <li><a href="/registration">Register</a></li>
+                <li style="float:right"><a class="active" href="#about">About</a></li>
+              </ul>
+              <input id="search-text" name="search-text" type="text">
+    </nav>
+    
+    </div> 
+    -->
+</body>
+</html>
