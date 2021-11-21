@@ -1,36 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/registration.css">
-
     <title>User Registration</title>
     <script defer src="public/js/formValidation.js"> </script>
 </head>
 <body>    
     <div class="container">
-
-        <form id = "registrationForm" onsubmit="return errorMessages()"> <!--calls errorMessages function */ -->
+        <!-- add to form tag for client side validation: onsubmit="return errorMessages()"-->
+        <form id="registrationForm" method=POST action="/users/register" enctype="application/x-www-form-urlencoded" onsubmit="return errorMessages()"> 
             <h1>Register</h1>
             <fieldset>
 
                 <div class="grid-item">
                 <label>Username</label>
-                <input id = "username" type="text" placeholder="Enter Username" />
+                <input class="registration-inputs" id="username" type="text" placeholder="Enter Username" name="username" required/>
                 </div>
                 <div class="grid-item">
                 <label>E-mail</label>
-                <input name = "email" id = "email" type="email" placeholder="Enter Email" />
+                <input class="registration-inputs" id="email" type="email" placeholder="Enter Email" name="email" required/>
                 </div>
                 <div class="grid-item">
                 <label>Password</label>
-                <input id = "password" type="text" placeholder="Enter Password" />
+                <input class="registration-inputs" id="password" type="text" placeholder="Enter Password" name="password" required/>
                 </div>
                 <div class="grid-item">
                 <label>Confirm Password</label>
-                <input id = "confirmPassword" type="text" placeholder="Re-Enter Password" />
+                <input class="registration-inputs" id="confirmPassword" type="text" placeholder="Re-Enter Password" name="cpassword" required/>
                 </div>
                 <!--added div element for error messages-->
                 <div id="error"></div>

@@ -7,8 +7,28 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const cors = require('cors'); 
+var sessions = require('express-session');
+var mysqlSession = require('express-mysql-session')(sessions);
+var flash = require('express-flash');
 
 const app = express();
+
+app.use(cors());  
+//
+var mysqlSessionStore = new mysqlSession(
+  {
+    /* using default options*/
+  }, require('./conf/database'));
+  app.use(sessions({
+    key: 'csid',
+    secret: "this is a secret form csc317",
+    store: mysqlSessionStore,
+    resave: false,
+    saveUninitialized: false
+  }))
+
+app.use(flash());
 
 app.engine(
   "hbs",
@@ -17,7 +37,11 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      emptyObject: (obj) => {
+        return !(obj.constructor === Object && Object.keys(obj).length == 0);
+      }
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
 
@@ -33,6 +57,15 @@ app.use(cookieParser());
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use("/public", express.static(path.join(__dirname, "public")));
+
+
+app.use((req, res, next) => {
+  console.log(req.session);
+  if(req.session.username){
+    res.locals.logged = true;
+  }
+  next();
+})
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
@@ -59,5 +92,32 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// var mysqlSessionStore = new mysqlSession(
+//   {
+//     /* using default options*/
+//   }, require('./conf/database'));
+//   app.use(sessions({
+//     key: 'csid',
+//     secret: "this is a secret form csc317",
+//     store: mysqlSessionStore,
+//     resave: false,
+//     saveUninitialized: false
+//   }))
+
+app.post('/posts', (re, res) => {     //
+  let { username, email, password, cpassword } = req.body;
+  db.query('INSERT INTO posts (username, email, password, cpassword ) VALUES (?, ?, ?, ?)',
+  [username, email, password, cpassword], function(err, results, fields){
+    if(err){
+      res.json(err);
+    }else{
+      res.json(results);
+    }
+  });
+})
+
+
+
 
 module.exports = app;

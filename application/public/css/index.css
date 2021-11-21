@@ -1,55 +1,87 @@
-body{
+body {
     background-color: #E9E6FF;
 }
-footer{
+
+footer {
     position: fixed;
     padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
     height: 40px;
 }
-#container{
+
+#container {
     display: grid;
 }
-#banner-text{
+
+#banner-text {
     display: inline-block;
     text-align: center;
     padding-top: 1em;
     padding-bottom: 1em;
-    font-size: 1.5em;
+    font-size: 2em;
     letter-spacing: .1em;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     background-color: #595860;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
-  li {
+}
+
+li {
     display: inline;
     float: left;
-  }
-  li a {
+}
+
+li a {
     display: block;
     color: white;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 2px;
     text-align: center;
     padding: 14px 25px;
     text-decoration: none;
-  }
-  #search-text{
-      display: flex;
-      margin: auto;
-      margin-right: 2em;
-      height: 20px;
-      width: 20em;
-      border-radius: .25rem;
-      letter-spacing: .1em;
-  }
- 
-  
+}
+
+#search-text {
+    display: flex;
+    margin: auto;
+    margin-right: 30%;
+    margin-left: 1.5em;
+    height: 20px;
+    width: 25em;
+    border-radius: .25rem;
+    letter-spacing: .1em;
+}
+
+/* CSS for flash message */
+#flash-message{
+    position: fixed;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, 0);
+
+}
+#flash-message div{
+    text-align: center;
+    width: auto;
+    height: 2em;
+    
+}
+.alert-danger{
+    background-color: rgba(255, 0, 0, 0.253);
+    color: red;
+}
+.alert-success{
+    background-color: rgba(105, 228, 171, 0.308);
+    color: green;
+}

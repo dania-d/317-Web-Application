@@ -31,7 +31,7 @@ function errorMessages() {
         } else if ((confirmPassword === "") || (password.value != confirmPassword.value)){
             error.textContent = "Passwords must match";
             error.style.color = "red";
-            console.log("hiii");
+            
             return false;
         }
         

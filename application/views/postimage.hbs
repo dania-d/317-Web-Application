@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/postimage.css">
-
     <title>Post Image</title>
 </head>
-<body class = "container">
+<body>
+<div class = "container">
     <form id="post">
         <h1>Post an Image</h1>
         <fieldset>
             <div>
-                <input type="text" placeholder="Enter Title">  
-                <input type="text" placeholder="Enter description">
+                <input class = "post-inputs" type="text" placeholder="Enter Title">  
+                <input class = "post-inputs" type="text" placeholder="Enter description">
             </div>
             <div id="submission">
                 <button id="upload-button" type="button">Upload image</button> 
+                <div id = "policy">
                 <input type="checkbox">
                 <label>I agree to the Acceptable Use policy</label>
-            </br>
-            <button id="submit-button" type="button">Submit</button>
+                </div>
+                <div id="submit-button">
+                    <button type="button">Submit</button>
+                </div>
             </div>
         </fieldset>
     </form>
+</div>
 </body>
-</html>

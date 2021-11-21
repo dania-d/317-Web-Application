@@ -1,8 +1,21 @@
 <nav id="nav-bar">
+  <input id="search-text" name="search-text" type="text">
             <ul>
+
+              {{#if logged}}
+                <li><a id="logout-button">Log Out</a></li>
+
+              {{else}}
                 <li><a href="/login">Login</a></li>
-                <li><a href="/postimage">Post</a></li>
                 <li><a href="/registration">Register</a></li>
+
+              {{/if}}
+                <li><a href="/postimage">Post</a></li>
+
+                
+                {{!-- <li><a href="/postimage">Post</a></li> --}}
+                {{!-- <li><a href="/registration">Register</a></li> --}}
               </ul>
-              <input id="search-text" name="search-text" type="text">
+                           
+
     </nav>

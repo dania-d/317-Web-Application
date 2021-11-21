@@ -1,34 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/login.css">
     <title>User Login</title>
 </head>
 <body>
     <header></header>
     <div class = "container"> 
-            <form class = "login">
+            <form class = "login" method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
                 <h1>Login</h1> 
                 <fieldset>
-                    <div class="field-item">
-                        <label>Username</label> 
-                        <input type="text" placeholder="Enter Username">
+                    <div class="login-item">
+                        <label class = "login-labels">Username</label> 
+                        <input class = "login-inputs" type="text" placeholder="Enter Username" required name="username">
                     </div>
-                    <div class="field-item">
-                        <label>Password</label>
-                        <input type="password" placeholder="Enter Password">
+                    <div class="login-item">
+                        <label class = "login-labels">Password</label>
+                        <input class = "login-inputs" type="password" placeholder="Enter Password" required name="password">
                     </div>
                     <div id="submit-button">
-                        <button type="button">Submit</button>
+                        <button id = "login-submit" type="submit">Submit</button>
                     </div>
                 </fieldset>
             </form>
     </div>
 </body>
-</html>
+
 
 
 

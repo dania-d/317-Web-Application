@@ -7,7 +7,6 @@ function getPhotos(){
         var fadeTarget = event.currentTarget;                           //element to fade out
         console.log(`the fade target is ${fadeTarget} !`);              //returns "the fade target is [object HTMLDivElement] "
         var fadeTargetOpacity = 1;                                      //set opacity of our target element
-        console.log(typeof(fadeTargetOpacity));                         //returns "string"
 
         var fadeEffect = setInterval(function () {                      //interval set-200 milliseconds
 
