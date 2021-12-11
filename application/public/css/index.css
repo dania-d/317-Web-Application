@@ -1,5 +1,8 @@
 body {
-    background-color: #E9E6FF;
+   /** background-color: #E9E6FF;  
+    background-image: url(https://pixeljoint.com/files/icons/full/citynr205.06.20.gif);
+**/
+background-image: url(https://cdna.artstation.com/p/assets/images/images/004/187/762/large/alena-aenami-7p-m-1k.jpg?1481159743) ;
 }
 
 footer {
@@ -8,6 +11,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 40px;
+    text-align: center;
 }
 
 #container {
@@ -26,7 +30,7 @@ footer {
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: #595860;
+    background-color: #ffffffd6;
 }
 
 ul {
@@ -43,26 +47,51 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 2px;
     text-align: center;
     padding: 14px 25px;
     text-decoration: none;
+    cursor: pointer;
 }
-
-#search-text {
+#search-bar{
     display: flex;
-    margin: auto;
-    margin-right: 30%;
-    margin-left: 1.5em;
-    height: 20px;
-    width: 25em;
-    border-radius: .25rem;
-    letter-spacing: .1em;
-}
+    align-items: center;
+    justify-content: center;
+    width: 35%;  
 
+}
+input{
+    
+    font-size: 1em;
+    border: none;   
+
+    /**border-radius: 2px;
+    border-color:rgba(0, 0, 0, 0.447);
+    border-width: 1px;**/
+}
+#search-text {
+    height: 24px;
+    width: 80%;
+    border-radius: .1rem;
+    letter-spacing: .1em;
+    border-right: 0;
+}
+#search-button{
+    height: 26px;
+    border-radius: .1rem;
+    border-left: 0;
+    width: 7%;
+    padding: 0px;
+    background: #2196F3;
+    color: white;
+    font-size: 10px;
+    border: none;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
 /* CSS for flash message */
 #flash-message{
     position: fixed;
@@ -75,6 +104,8 @@ li a {
     text-align: center;
     width: auto;
     height: 2em;
+    background-color: white;
+    font-size: 18px;
     
 }
 .alert-danger{

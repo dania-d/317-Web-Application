@@ -1,5 +1,8 @@
 <nav id="nav-bar">
-  <input id="search-text" name="search-text" type="text">
+  <div id="search-bar">
+    <input id="search-text" name="search-text" type="text" placeholder="Search">
+    <button id="search-button" type="submit"><i class="fa fa-search"></i></button>
+  </div>        
             <ul>
 
               {{#if logged}}
@@ -11,11 +14,10 @@
 
               {{/if}}
                 <li><a href="/postimage">Post</a></li>
+                <li><a href="/">Home</a></li>
 
-                
-                {{!-- <li><a href="/postimage">Post</a></li> --}}
-                {{!-- <li><a href="/registration">Register</a></li> --}}
-              </ul>
+
+            </ul>
                            
 
     </nav>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,38 @@
     <link rel="stylesheet" type="text/css" href="/public/css/viewpost.css">
     <title>View Image</title>
 </head>
+
 <body>
     <header></header>
-        <div class="container">
-                
-                <div class ="post">
-                    <h1>Post Title</h1>
-                    <section>James May</section>
-                    <section>The Golden Gate Bridge From Battery Spencer</section>
-                    <section>09/23/2021 23:15</section> 
-                
-                <img src="https://www.history.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTY1MTc3MjE0MzExMDgxNTQ1/topic-golden-gate-bridge-gettyimages-177770941.jpg" alt="GG Bridge" >
-                </div>
-       
-        </div>
-</body>
-</html>
+    <div id="post-container">
 
+        <div id="post">
+            <h1 id="image-post-title-text"> {{currentPost.title}}</h1>
+            <div id="image-post-author">Posted by: {{currentPost.username}}</div>
+            <div id="image-post-date">{{currentPost.created}}</div>
+            <div id="image-post-desc">{{currentPost.description}}</div>
+
+            <img id="image-post-image" src="/{{currentPost.photopath}}">
+
+            <div id="comment-container">
+                
+                <div id="comment-box">
+                    <textarea placeholder="Add a comment..." id="comment-box-text"></textarea>
+                    <i id="comment-box-button" aria-hidden="true"></i>
+                </div>
+
+                <div id="messages">
+                    <div id="message-"> 
+                        <strong class="author-text">@danii1234</strong>
+                        <div class="comment-text">This is a comment test for styling.</div>
+                       
+                          
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+    </div>
+</body>
+
+</html>

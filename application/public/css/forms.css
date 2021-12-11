@@ -15,7 +15,7 @@ h1 {
     margin-top: 1em;
 }
 
-#registrationForm{  
+#registrationForm, #post{  
     width: 39em;
     height: 34em;  
     margin-bottom: 10%;
@@ -33,16 +33,7 @@ h1 {
     font-family:'Courier New', Courier, monospace;
 }
 
-#post{
-    width: 35em;
-    height: 30em;
-    margin-bottom: 10%;
-    background-color: rgb(244, 242, 248);
-    border-radius: 10px ;  
-    font-family:'Courier New', Courier, monospace;
-}
-
-.container{
+.form-container{
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -82,19 +73,19 @@ fieldset {
     margin-top: 3em;
 }
 
-#upload-button{
-    display: block;
-    width: 11em;
-    margin: auto;
-    margin-top: 2em;
-    text-align: center;
-}
-
-button{
+button, #upload-button{
     letter-spacing: .1em;
     height: 1.8em;
     width: 6em;
-    font-size: 15px;
+    font-size: 16px;
+}
+
+#upload-button{
+    display: block;
+    width: 20em;
+    margin: auto;
+    margin-top: 3em;
+    text-align: center;
 }
 
 button:hover{
@@ -103,7 +94,7 @@ button:hover{
     transition-duration: 0.5s;
 }
 
-input::placeholder, button, input{
+input::placeholder, button, input, #file-upload-button{
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -117,18 +108,13 @@ input::placeholder, button, input{
     padding-top: .2em;
     padding-bottom: .2em;
     padding-left: .3em;
-    border-style: solid;
-}
-
-input{
-    font-size: 1em;
-    border-radius: 2px;
-    border-color:rgba(0, 0, 0, 0.447);
-    border-width: 1px;
+    border: none;
 }
 
 .post-inputs{
-    width: 90%;
+    display: block;
+    width: 95%;
+    height: 27px;
     padding: .2em .5em .2em .5em;
     margin-bottom: 1em;
     border-color:rgba(0, 0, 0, 0.447);
@@ -152,3 +138,4 @@ label{
     padding: .2em 1em 1em 1em;
     border-radius: 4px;
 }
+

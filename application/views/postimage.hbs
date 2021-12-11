@@ -2,22 +2,23 @@
     <title>Post Image</title>
 </head>
 <body>
-<div class = "container">
-    <form id="post">
+<div class = "form-container">
+    <form id="post" method="POST" enctype="multipart/form-data" action="/posts/createPost">
         <h1>Post an Image</h1>
         <fieldset>
             <div>
-                <input class = "post-inputs" type="text" placeholder="Enter Title">  
-                <input class = "post-inputs" type="text" placeholder="Enter description">
+                <input class = "post-inputs" type="text" placeholder="Enter Title" name="title" required >  
+                <input class = "post-inputs" type="text" placeholder="Enter description" name="description" required >
             </div>
             <div id="submission">
-                <button id="upload-button" type="button">Upload image</button> 
+              <!--  <button id="upload-button" type="button">Upload image</button> -->
+                <input id="upload-button" type="file" name="uploadImage" required>
                 <div id = "policy">
-                <input type="checkbox">
-                <label>I agree to the Acceptable Use policy</label>
+                <input type="checkbox" required>
+                <label>I agree to the Acceptable Use policy</label> 
                 </div>
                 <div id="submit-button">
-                    <button type="button">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </div>
         </fieldset>

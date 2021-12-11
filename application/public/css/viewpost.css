@@ -2,7 +2,6 @@ html{
     margin: 0px;
     padding: 0px;
     height: 100%;
-    background-color: #738290;
 }
 body{
     margin: 0px;
@@ -13,29 +12,62 @@ h1 {
     text-align: center;   
     letter-spacing: .1em;
 }
-img{
+#image-post-image{
     width: 100%;
-    height: auto;
+    height: auto; 
 }
-section{
+#image-post-author, #image-post-date, #image-post-desc  {
     margin-bottom: 1.5em;
-    text-align: center;
+    margin-left: 1em;
+    margin-right: 1em;
 }
-.post{
-    height: 500px;
-    width: 500px;
-    background-color: white;
-    padding: 50px;
-    position: relative;
-    border-radius: .5em;
-    
+#post{
+    width: 40em;
+    height: 38em;
+    margin-bottom: 10%;
+    background-color: rgb(244, 242, 248);
+    border-radius: 7px ;  
+    font-family:'Times New Roman', Times, serif;
 }
-.container{
-    min-height: 100vh;
+#comment-box-text{
+    width: 99%;
+    margin-bottom: 0;
+    resize: none;
+}
+#post-container{
     display: flex;
     justify-content: center;
+    height: 100vh;
     align-items: center;
-    flex-direction: column;
-    gap: .5em;
+}
+#messages{
+    display: flex;
+    width: 100%;
+    height: 5em;  
+    background-color: rgb(36, 21, 87);
+    vertical-align: top;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    flex-flow: column-reverse nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.699);
+    box-shadow: -2px 2px 4px 4px rgba(255, 255, 255, 0.445);
+    border-radius: .3em;
+    color: white;
+   
+    
+}
+div[id^=message-]{
 
+    display: grid;
+    grid-template-rows: .3fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: .2em;
+    padding: .25rem;
+    margin: .2rem;
+    font-size: 1rem;
+    border: 0.06rem solid black;
+
+    grid-template-areas: 
+    "author created"
+    "comment comment";
 }
