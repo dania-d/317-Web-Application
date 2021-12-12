@@ -1,3 +1,4 @@
+/* Login, register, post forms css */
 html{
     margin: 0px;
     height: 100%;
@@ -19,7 +20,7 @@ h1 {
     width: 39em;
     height: 34em;  
     margin-bottom: 10%;
-    background-color: rgb(244, 244, 245);
+    background-color: #ffffffe3;
     border-radius: 10px ;  
     font-family:'Courier New', Courier, monospace;
 }
@@ -28,7 +29,7 @@ h1 {
     width: 28em;
     height: 28em; 
     margin-bottom: 10%;
-    background-color:rgb(244, 242, 248);
+    background-color:#ffffffe3;
     border-radius: 10px ;  
     font-family:'Courier New', Courier, monospace;
 }
@@ -61,6 +62,8 @@ fieldset {
     width: 20em;
     height: 2em;
     text-align: center;
+    border: 1.5px solid rgba(83, 83, 83, 0.521);   
+
 }
 
 #submit-button{
@@ -108,7 +111,8 @@ input::placeholder, button, input, #file-upload-button{
     padding-top: .2em;
     padding-bottom: .2em;
     padding-left: .3em;
-    border: none;
+    border: 1.5px solid rgba(83, 83, 83, 0.521);   
+
 }
 
 .post-inputs{
@@ -117,7 +121,8 @@ input::placeholder, button, input, #file-upload-button{
     height: 27px;
     padding: .2em .5em .2em .5em;
     margin-bottom: 1em;
-    border-color:rgba(0, 0, 0, 0.447);
+    border: 1.5px solid rgba(83, 83, 83, 0.521);   
+
 }
 
 .login-labels{

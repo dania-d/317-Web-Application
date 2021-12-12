@@ -29,11 +29,6 @@ router.post('/createPost', uploader.single("uploadImage"), (req, res, next) => {
     let description = req.body.description;
     let fk_userId = req.session.userId;
 
-    /**
-     * do server side validation 
-     * 
-     */
-
     sharp(fileUploaded)
         .resize(200)
         .toFile(destinationOfThumbnail)
@@ -75,13 +70,6 @@ router.get('/search', async (req, res, next) => {
                 results: [],
             });
         } else {
-            /**let baseSQL = "SELECT id, title, description, thumbnail, concat_ws(' ', title, \
-            description) AS haystack \
-            FROM posts \
-            HAVING haystack like ?;";
-            let sqlReadySearchTerm = "%" + searchTerm + "%";
-            db.execute(baseSQL, [sqlReadySearchTerm])
-                .then(([results, fields]) => { **/
             let results = await PostModel.search(searchTerm);
             if (results.length) {
                 res.send({

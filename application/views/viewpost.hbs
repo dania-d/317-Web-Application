@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/viewpost.css">
     <title>View Image</title>
 </head>
 
@@ -22,24 +15,77 @@
             <img id="image-post-image" src="/{{currentPost.photopath}}">
 
             <div id="comment-container">
-                
+
                 <div id="comment-box">
                     <textarea placeholder="Add a comment..." id="comment-box-text"></textarea>
+                    <button id="comment-box-button" type="submit">Submit</button>
                     <i id="comment-box-button" aria-hidden="true"></i>
                 </div>
 
                 <div id="messages">
-                    <div id="message-"> 
-                        <strong class="author-text">@danii1234</strong>
-                        <div class="comment-text">This is a comment test for styling.</div>
-                       
-                          
-                    </div>
+                    {{#each currentPost.comments}}
+                    {{> comment this}}
+                    {{/each}}
                 </div>
-            </div>   
+            </div>
         </div>
 
     </div>
+
+    {{!-- change date format --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('span[class=date-posted').forEach((postedDate) => {
+                postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+            });
+        });
+
+
+        function addMessage(data){
+            let template = document.createElement('template');
+            template.innerHTML = 
+            `<div id="message-${data.commentId}">
+                <strong class="author-text">@${data.username}</strong>
+                <div class="date-posted">${new Date().toLocaleString()}</div>
+                <div class="comment-text">${data.comment}</div>
+            </div>
+            `;
+
+            document.getElementById('messages').firstChild.before(template.content.firstChild);
+        }
+
+        document.getElementById('comment-box-button').onclick = (event) => {
+            let commentText = document.getElementById('comment-box-text').value;
+            let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
+
+            if (!commentText) {
+                return;
+            }
+
+            let fetchOptions = {
+                method: "POST",
+                headers: {
+                    "Content-type": "Application/json"
+                },
+                body: JSON.stringify({
+                    comment: commentText,
+                    postId, postId
+                })
+            }
+            fetch('/comments/create', fetchOptions)
+                .then((response) => response.json())
+                .then((data) => {
+                    if(data.code == 1){
+                        addMessage(data);
+                    } else {
+                        addFlashFromFrontEnd(data.message, data.status);
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+
+    </script>
 </body>
+
 
 </html>

@@ -1,12 +1,9 @@
 body {
-   /** background-color: #E9E6FF;  
-    background-image: url(https://pixeljoint.com/files/icons/full/citynr205.06.20.gif);
-**/
-background-image: url(https://cdna.artstation.com/p/assets/images/images/004/187/762/large/alena-aenami-7p-m-1k.jpg?1481159743) ;
+    background-image: url(https://cdna.artstation.com/p/assets/images/images/004/187/762/large/alena-aenami-7p-m-1k.jpg?1481159743) ;
 }
 
 footer {
-    position: fixed;
+    position: relative;
     padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
@@ -63,15 +60,13 @@ li a {
     width: 35%;  
 
 }
+
 input{
-    
     font-size: 1em;
     border: none;   
 
-    /**border-radius: 2px;
-    border-color:rgba(0, 0, 0, 0.447);
-    border-width: 1px;**/
 }
+
 #search-text {
     height: 24px;
     width: 80%;
@@ -79,6 +74,7 @@ input{
     letter-spacing: .1em;
     border-right: 0;
 }
+
 #search-button{
     height: 26px;
     border-radius: .1rem;
@@ -92,14 +88,15 @@ input{
     border-left: none; /* Prevent double borders */
     cursor: pointer;
   }
+
 /* CSS for flash message */
 #flash-message{
     position: fixed;
     left: 50%;
     top: 25%;
     transform: translate(-50%, 0);
-
 }
+
 #flash-message div{
     text-align: center;
     width: auto;
@@ -108,10 +105,12 @@ input{
     font-size: 18px;
     
 }
+
 .alert-danger{
     background-color: rgba(255, 0, 0, 0.253);
     color: red;
 }
+
 .alert-success{
     background-color: rgba(105, 228, 171, 0.308);
     color: green;

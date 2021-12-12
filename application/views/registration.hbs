@@ -2,44 +2,50 @@
     <title>User Registration</title>
     <script defer src="public/js/formValidation.js"> </script>
 </head>
-<body>    
+
+<body>
     <div class="form-container">
-        <!-- add to form tag for client side validation: onsubmit="return errorMessages()"-->
-        <form id="registrationForm" method=POST action="/users/register" enctype="application/x-www-form-urlencoded" onsubmit="return errorMessages()"> 
+        <form id="registrationForm" method=POST action="/users/register" enctype="application/x-www-form-urlencoded"
+            onsubmit="return errorMessages()">
             <h1>Register</h1>
             <fieldset>
 
                 <div class="grid-item">
-                <label>Username</label>
-                <input class="registration-inputs" id="username" type="text" placeholder="Enter Username" name="username" required/>
+                    <label>Username</label>
+                    <input class="registration-inputs" id="username" type="text" placeholder="Enter Username"
+                        name="username" required />
                 </div>
                 <div class="grid-item">
-                <label>E-mail</label>
-                <input class="registration-inputs" id="email" type="email" placeholder="Enter Email" name="email" required/>
+                    <label>E-mail</label>
+                    <input class="registration-inputs" id="email" type="email" placeholder="Enter Email" name="email"
+                        required />
                 </div>
                 <div class="grid-item">
-                <label>Password</label>
-                <input class="registration-inputs" id="password" type="text" placeholder="Enter Password" name="password" required/>
+                    <label>Password</label>
+                    <input class="registration-inputs" id="password" type="password" placeholder="Enter Password"
+                        name="password" required />
                 </div>
                 <div class="grid-item">
-                <label>Confirm Password</label>
-                <input class="registration-inputs" id="confirmPassword" type="text" placeholder="Re-Enter Password" name="cpassword" required/>
+                    <label>Confirm Password</label>
+                    <input class="registration-inputs" id="confirmPassword" type="password" placeholder="Re-Enter Password"
+                        name="cpassword" required />
                 </div>
-                <!--added div element for error messages-->
                 <div id="error"></div>
 
                 <div class="grid-item" id="checkboxes">
-                    <input type="checkbox"  required /> 
+                    <input type="checkbox" required />
                     <label class="checkbox-labels">I am 13+ years of age</label> </br>
-                    <input type="checkbox" required /> 
-                    <label class="checkbox-labels">I accept the <a href="https://its.sfsu.edu/privacynotice" target="_blank">TOS and Privacy Rules</a></label>
+                    <input type="checkbox" required />
+                    <label class="checkbox-labels">I accept the <a href="https://its.sfsu.edu/privacynotice"
+                            target="_blank">TOS and Privacy Rules</a></label>
                 </div>
 
-                <div  id="submit-button">
-                <button type="submit">Submit</button>           <!-- type=submit in order for required tags to work-->
+                <div id="submit-button">
+                    <button type="submit">Submit</button>
                 </div>
             </fieldset>
         </form>
-    </div>   
+    </div>
 </body>
+
 </html>
