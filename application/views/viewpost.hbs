@@ -7,11 +7,12 @@
     <div id="post-container">
 
         <div id="post">
-            <h1 id="image-post-title-text"> {{currentPost.title}}</h1>
-            <div id="image-post-author">Posted by: {{currentPost.username}}</div>
-            <div id="image-post-date">{{currentPost.created}}</div>
-            <div id="image-post-desc">{{currentPost.description}}</div>
-
+            <div id="photo-info">
+                <h1 id="image-post-title-text"> {{currentPost.title}}</h1>
+                <div id="image-post-author">Posted by: {{currentPost.username}}</div>
+                <div id="image-post-date">{{currentPost.created}}</div>
+                <div id="image-post-desc">{{currentPost.description}}</div>
+            </div>
             <img id="image-post-image" src="/{{currentPost.photopath}}">
 
             <div id="comment-container">
@@ -41,10 +42,10 @@
         });
 
 
-        function addMessage(data){
+        function addMessage(data) {
             let template = document.createElement('template');
-            template.innerHTML = 
-            `<div id="message-${data.commentId}">
+            template.innerHTML =
+                `<div id="message-${data.commentId}">
                 <strong class="author-text">@${data.username}</strong>
                 <div class="date-posted">${new Date().toLocaleString()}</div>
                 <div class="comment-text">${data.comment}</div>
@@ -75,7 +76,7 @@
             fetch('/comments/create', fetchOptions)
                 .then((response) => response.json())
                 .then((data) => {
-                    if(data.code == 1){
+                    if (data.code == 1) {
                         addMessage(data);
                     } else {
                         addFlashFromFrontEnd(data.message, data.status);
